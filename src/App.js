@@ -1,5 +1,12 @@
-const App = props => {
-  
-}
+import { Fragment } from "react";
+import ToDoinput from "./Components/TodoInput/ToDoinput";
 
-export default App
+const App = function () {
+  return (
+    <Fragment>
+      <ToDoinput />
+    </Fragment>
+  );
+};
+
+export default App;

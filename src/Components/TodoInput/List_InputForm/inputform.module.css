@@ -1,0 +1,32 @@
+.formContainer {
+  width: 100%;
+  margin-top: 3rem;
+  display: flex;
+  justify-content: space-around;
+}
+.form_control {
+  width: 80%;
+  height: 3rem;
+  outline: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom-color: #ef473a;
+  background-color: #f7f7f7;
+  font-size: x-large;
+}
+.form_control::placeholder {
+  font-size: large;
+  color: #726f6f;
+}
+.addButton {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  border: none;
+  background-color: green;
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
