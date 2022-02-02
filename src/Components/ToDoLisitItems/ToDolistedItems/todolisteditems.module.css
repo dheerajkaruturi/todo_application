@@ -1,0 +1,57 @@
+.itemInList {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 1.25rem 0;
+}
+.inputCheckBox {
+  margin: 0 2rem;
+}
+.taskDescription {
+  width: 44.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  display: flex;
+  overflow-wrap: normal;
+  padding: 0.5rem;
+}
+.deleteButton {
+  cursor: pointer;
+  width: 2.75rem;
+  height: 3.7rem;
+  padding: 1rem 1.9rem;
+  border-radius: 50%;
+  border: none;
+  background-color: #ea4435d8;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  transition: all 0.4s;
+}
+.deleteButton:hover {
+  background-color: #ea4335;
+}
+.counter {
+  color: #000;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-align: center;
+  width: 8rem;
+  margin: 0 auto;
+  background-color: #ffba00;
+  padding: 5px;
+  border-radius: 1rem;
+}
+.createdOn {
+  color: #f3f3f3;
+  font-weight: 600;
+  font-size: 0.75rem;
+  background-color: #4285f4;
+  width: 12rem;
+  text-align: center;
+  padding: 5px;
+  border-radius: 1rem;
+  margin-left: 1.5rem;
+}

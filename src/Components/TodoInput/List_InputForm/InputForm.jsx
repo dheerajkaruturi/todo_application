@@ -11,13 +11,10 @@ const InputForm = () => {
         />
         <button className={styles.addButton}>
           <i
-            style={{ marginTop: "5px", alignItems: "center" }}
+            style={{ marginTop: "5px", alignItems: "center", color: "#fff" }}
             className="icon ion-ios-checkmark"
           ></i>
         </button>
-      </div>
-      <div>
-        <p>validations from here</p>
       </div>
     </form>
   );

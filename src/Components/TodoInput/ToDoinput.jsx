@@ -8,6 +8,12 @@ const ToDoinput = () => {
     <Card>
       <MainHeading />
       <InputForm />
+      <div className={styles.errorText}>
+        <p>
+          Validations Applied! Alphabetical characters only, minimum of 5 and
+          maximum of 100.
+        </p>
+      </div>
     </Card>
   );
 };
