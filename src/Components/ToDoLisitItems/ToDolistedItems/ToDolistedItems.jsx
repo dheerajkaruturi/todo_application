@@ -1,22 +1,18 @@
 import React, { Fragment } from "react";
-import Card from "../../Card/Card";
+import ListedItemsWrapper from "../../Card/ListedItemsWrapper";
 import styles from "./todolisteditems.module.css";
 
-const ToDolistedItems = () => {
+const ToDolistedItems = (props) => {
   return (
     <Fragment>
-      <p className={styles.counter}>Total Tasks: 10</p>
-      <Card>
+      <ListedItemsWrapper>
         <li className={styles.itemInList}>
           <input type="checkbox" className={styles.inputCheckBox} />
-          <p className={styles.taskDescription}>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum,
-            blanditiis.Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-          </p>
+          <p className={styles.taskDescription}>{props.description}</p>
           <button className={styles.deleteButton}>X</button>
         </li>
-        <p className={styles.createdOn}>Created On : 02-02-2020</p>
-      </Card>
+        <p className={styles.createdOn}>Created On : {props.date}</p>
+      </ListedItemsWrapper>
     </Fragment>
   );
 };

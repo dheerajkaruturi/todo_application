@@ -4,6 +4,11 @@
   display: flex;
   justify-content: space-around;
 }
+.arrowGlyph {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+}
 .form_control {
   width: 80%;
   height: 3rem;
@@ -11,7 +16,7 @@
   border-top: none;
   border-left: none;
   border-right: none;
-  border-bottom-color: #ef473a;
+  border-bottom-color: #ccc;
   background-color: #f7f7f7;
   font-size: x-large;
 }
@@ -34,4 +39,10 @@
 }
 .addButton:hover {
   background-color: #1ca261;
+}
+.errorText {
+  font-size: medium;
+  color: #ee2828;
+  margin-left: 3.9rem;
+  font-weight: 700;
 }
