@@ -11,16 +11,16 @@ const App = function () {
     const fetchResponse = await fetch(
       "https://to-do-react-app-f0b6e-default-rtdb.firebaseio.com/tasks.json"
     );
-    const data = await fetchResponse.json();
+    const dataGenerated = await fetchResponse.json();
 
     const tasks_created = [];
 
-    for (const key in data) {
+    for (const key in dataGenerated) {
       tasks_created.push({
         id: key,
-        date: data[key].date,
-        description: data[key].description,
-        status: data[key].status,
+        date: dataGenerated[key].date,
+        description: dataGenerated[key].description,
+        status: dataGenerated[key].status,
       });
     }
     setTasks(tasks_created);
