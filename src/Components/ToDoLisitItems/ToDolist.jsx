@@ -6,7 +6,6 @@ const ToDolist = (props) => {
   return (
     <Fragment>
       <div className={styles["list-container"]}>
-        <p className={styles.counter}>Total Tasks: 10</p>
         <ul className={styles.listItems}>
           {props.listData.map((data) => {
             return (

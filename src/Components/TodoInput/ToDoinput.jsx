@@ -2,11 +2,11 @@ import Card from "../Card/Card";
 import InputForm from "./List_InputForm/InputForm";
 import MainHeading from "./MainHeading/MainHeading";
 
-const ToDoinput = () => {
+const ToDoinput = (props) => {
   return (
     <Card>
       <MainHeading />
-      <InputForm />
+      <InputForm dataPostHandler={props.dataPostHandler} />
     </Card>
   );
 };
