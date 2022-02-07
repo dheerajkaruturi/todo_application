@@ -3,9 +3,11 @@ import styles from "./app.module.css";
 import DeleteAll from "./Components/DeleteAllButton/DeleteAll";
 import ToDoinput from "./Components/TodoInput/ToDoinput";
 import ToDolist from "./Components/ToDoLisitItems/ToDolist";
+import firebase from "./firebase";
 
-const base_URL =
-  "https://to-do-react-app-f0b6e-default-rtdb.firebaseio.com/tasks.json";
+//const db = getFirestore(firebase);
+let base_URL =
+  "https://to-do-react-app-f0b6e-default-rtdb.firebaseio.com/tasks.json/";
 
 const App = function () {
   const [tasks, setTasks] = useState([]);
@@ -64,6 +66,7 @@ const App = function () {
 
       const data = await response.json();
       console.log(data);
+      fetchedTaskData();
     } catch (error) {
       alert(error.message);
     }
@@ -71,14 +74,19 @@ const App = function () {
 
   //? deleting the selected task from the tasks list:
 
-  const deleteTaskHandler = function (id) {
-    const tasktoRemove = fetch(base_URL, {method: 'DELETE'})
-    
+  const deleteSelectedTask = function (task_id) {
+    const taskRef = firebase.database().ref("tasks").child(task_id);
+    taskRef.remove();
+    fetchedTaskData();
   };
 
   //? delete all tasks that are created by the user:
 
-  const deleteAll = function () {};
+  const deleteAll = async function () {
+    await fetch(base_URL, { method: "DELETE" });
+    fetchedTaskData();
+  };
+
   return (
     <Fragment>
       <div className={styles.inputForm_container}>
@@ -105,7 +113,7 @@ const App = function () {
         )}
 
         <div className={styles.badges_container}>
-          {!isLoading && tasks.length > 0 && (
+          {!isLoading && (
             <button className={styles.refreshButton} onClick={fetchedTaskData}>
               Refresh List
             </button>
@@ -115,13 +123,13 @@ const App = function () {
             <p className={styles.counter}>Total Tasks: {tasks.length}</p>
           )}
 
-          {!isLoading && tasks.length > 1 && (
+          {!isLoading && tasks.length > 0 && (
             <DeleteAll deleteAllmethod={deleteAll} />
           )}
         </div>
 
         {!isLoading && tasks.length > 0 && (
-          <ToDolist listData={tasks} taskDelete={deleteTaskHandler} />
+          <ToDolist listData={tasks} taskDelete={deleteSelectedTask} />
         )}
       </div>
     </Fragment>

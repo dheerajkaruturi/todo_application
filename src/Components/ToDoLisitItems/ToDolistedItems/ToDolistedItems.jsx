@@ -9,10 +9,6 @@ const ToDolistedItems = (props) => {
     setChecked(true);
   };
 
-  const deleteTaskHandler = function (id) {
-    return id.splice(id, 1);
-  };
-
   return (
     <Fragment>
       <ListedItemsWrapper>
@@ -35,7 +31,7 @@ const ToDolistedItems = (props) => {
           ) : (
             <button
               className={styles.deleteButton}
-              onClick={() => deleteTaskHandler(props.id)}
+              onClick={() => props.taskDelete(props.id)}
             >
               Delete
             </button>

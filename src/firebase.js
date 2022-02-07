@@ -1,6 +1,6 @@
-import firebase from "firebase/compat/app";
+import firebase from "firebase";
 
-const firebaseConfig = {
+var firebaseConfig = {
   apiKey: "AIzaSyC74tc0_lLoLp-GBRUxOPqT567j_P4qi7Y",
   authDomain: "to-do-react-app-f0b6e.firebaseapp.com",
   databaseURL: "https://to-do-react-app-f0b6e-default-rtdb.firebaseio.com",

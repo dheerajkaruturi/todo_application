@@ -14,6 +14,7 @@ const ToDolist = (props) => {
                 id={data.id}
                 description={data.description}
                 date={data.date}
+                taskDelete={props.taskDelete}
               />
             );
           })}
