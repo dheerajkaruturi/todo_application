@@ -12,12 +12,6 @@ const App = function () {
   const [isLoading, setIsLoading] = useState(true);
   const [errors, setErrors] = useState();
 
-  //! delete all tasks that are created by the user:
-
-  const deleteAll = function () {
-    setTasks([]);
-  };
-
   //? making a GET Request to firebase:
 
   const fetchedTaskData = async function () {
@@ -65,7 +59,7 @@ const App = function () {
       });
 
       if (!response.ok) {
-        throw new Error("could not post the data somehow");
+        throw new Error("Could not post the data somehow");
       }
 
       const data = await response.json();
@@ -75,6 +69,16 @@ const App = function () {
     }
   };
 
+  //? deleting the selected task from the tasks list:
+
+  const deleteTaskHandler = function (id) {
+    const tasktoRemove = fetch(base_URL, {method: 'DELETE'})
+    
+  };
+
+  //? delete all tasks that are created by the user:
+
+  const deleteAll = function () {};
   return (
     <Fragment>
       <div className={styles.inputForm_container}>
@@ -103,7 +107,7 @@ const App = function () {
         <div className={styles.badges_container}>
           {!isLoading && tasks.length > 0 && (
             <button className={styles.refreshButton} onClick={fetchedTaskData}>
-              Refresh
+              Refresh List
             </button>
           )}
 
@@ -116,7 +120,9 @@ const App = function () {
           )}
         </div>
 
-        {!isLoading && tasks.length > 0 && <ToDolist listData={tasks} />}
+        {!isLoading && tasks.length > 0 && (
+          <ToDolist listData={tasks} taskDelete={deleteTaskHandler} />
+        )}
       </div>
     </Fragment>
   );

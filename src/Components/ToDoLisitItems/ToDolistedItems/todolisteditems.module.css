@@ -7,7 +7,8 @@
 .inputCheckBox {
   margin: 0 2rem;
 }
-.taskDescription {
+.taskDescription,
+.taskDescription_completedTask {
   width: 44.5rem;
   font-size: 0.9rem;
   font-weight: 500;
@@ -15,23 +16,36 @@
   overflow-wrap: normal;
   padding: 0.5rem;
 }
-.deleteButton {
+.taskDescription_completedTask {
+  text-decoration: line-through;
+}
+.deleteButton,
+.doneButton {
   cursor: pointer;
-  width: 2.75rem;
-  height: 3.7rem;
-  padding: 1rem 1.9rem;
-  border-radius: 50%;
+  width: 3.75rem;
+  height: 2.5rem;
+  padding: 0rem 0.9rem;
+  border-radius: 3rem;
   border: none;
-  background-color: #ea4435d8;
-  font-size: 1.5rem;
+  font-size: 0.75rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #fff;
   transition: all 0.4s;
+}
+.deleteButton {
+  background-color: #ea4435d8;
+  color: #fff;
 }
 .deleteButton:hover {
   background-color: #ea4335;
+}
+.doneButton {
+  background-color: #53ce1a;
+  color: #000;
+}
+.doneButton:hover {
+  background-color: #16af1d;
 }
 
 .createdOn {

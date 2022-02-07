@@ -11,6 +11,7 @@ const ToDolist = (props) => {
             return (
               <ToDolistedItems
                 key={data.id}
+                id={data.id}
                 description={data.description}
                 date={data.date}
               />
