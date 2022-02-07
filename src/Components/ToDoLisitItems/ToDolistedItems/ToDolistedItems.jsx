@@ -27,7 +27,12 @@ const ToDolistedItems = (props) => {
             <p className={styles.taskDescription}>{props.description}</p>
           )}
           {checked ? (
-            <button className={styles.doneButton}>Done</button>
+            <button
+              className={styles.doneButton}
+              onClick={() => props.taskDelete(props.id)}
+            >
+              Done
+            </button>
           ) : (
             <button
               className={styles.deleteButton}

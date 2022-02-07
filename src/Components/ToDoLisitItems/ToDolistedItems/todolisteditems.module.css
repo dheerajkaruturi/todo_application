@@ -41,11 +41,11 @@
   background-color: #ea4335;
 }
 .doneButton {
-  background-color: #53ce1a;
+  background-color: #16af1eab;
   color: #000;
 }
 .doneButton:hover {
-  background-color: #16af1d;
+  background-color: #19c722;
 }
 
 .createdOn {
